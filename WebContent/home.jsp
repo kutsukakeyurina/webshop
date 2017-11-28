@@ -113,7 +113,7 @@
 			<h4>ピックアップアイテム</h4>
 			<div class="pickup">
 				<ul class="leftpickup">
-					<li><a href="shopping.jsp"><img alt="" src="image/pickup1.jpg" /></a></li>
+					<li><a href="./image/pickup1.jpg"><img alt="" src="image/pickup1.jpg" /></a></li>
 					<li><a href="shopping.jsp"><img alt="" src="image/pickup2.jpg" /></a></li>
 					<li><a href="shopping.jsp"><img alt="" src="image/pickup3.jpg" /></a></li>
 				</ul>
