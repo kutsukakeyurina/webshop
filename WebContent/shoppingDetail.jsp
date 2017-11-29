@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib prefix="s" uri="/struts-tags"%>
+    pageEncoding="UTF-8"%>
+    <%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +25,7 @@
 				<ul>
 					<li><a href="home.jsp">TOP</a></li>
 					<li><a href="style.jsp">Style</a></li>
-					<li><s:a href="#1">Shopping</s:a></li>
+					<li><a href="shopping.jsp">Shopping</a></li>
 					<li><a href="reserve.jsp">Reserve</a></li>
 				</ul>
 			</div>
@@ -44,9 +44,21 @@
 
 						<tr>
 
-							<td><a href='<s:url action="ShoppingDetailAction"><s:param name="itemId" value="%{itemId}" /></s:url>'><img src='<s:property value="itemImage"/>'/></a></td>
-							<td><a href='<s:url action="ShoppingDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>'><s:property value="itemDetail" /></a></td>
+							<td><a href=""><img src='<s:property value="itemImage"/>'/></a></td>
+							<td><a href=""><s:property value="itemDetail" /></a></td>
 							<td><s:property value="price" /></td>
+							<td><s:property value="lengthS"/>
+							<td><s:property value="lengthM"/>
+							<td><s:property value="lengthL"/>
+							<td><s:property value="bustS"/>
+							<td><s:property value="bustM"/>
+							<td><s:property value="bustL"/>
+							<td><s:property value="sleeveS"/>
+							<td><s:property value="sleeveM"/>
+							<td><s:property value="sleeveL"/>
+							<td><s:property value="detail"/>
+							<td><s:property value="material"/>
+
 						</tr>
 					</s:iterator>
 				</tbody>
@@ -107,10 +119,5 @@
 		<!--フッターここまで-->
 
 	</div>
-	<!--"container"-->
-	<script type="text/javascript" src="script.js"></script>
-
-
-
 </body>
 </html>

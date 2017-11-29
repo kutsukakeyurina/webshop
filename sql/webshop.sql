@@ -67,6 +67,44 @@ BEARポロシャツ 241-7251801-120",11300),
 (19,3,"黒色ワンピース","./image/blackonepeace.jpg","マリ クレール　　ニットワンピース",17500),
 (20,3,"赤色ワンピース","","テストテストテスト",3300);
 
+create table item_size(
+item_size_id int primary key auto_increment,
+item_id int,
+length_s int,
+length_m int,
+length_l int,
+bust_s int,
+bust_m int,
+bust_l int,
+sleeve_s int,
+sleeve_m int,
+sleeve_l int
+);
+
+insert into item_size(item_id,length_s,length_m,length_l,bust_s,bust_m,bust_l,sleeve_s,sleeve_m,sleeve_l) values(1,10,10,10,10,10,10,10,10,10);
+
+
+create table item_description(
+item_description_id int primary key auto_increment,
+item_id int,
+detail varchar(255),
+material varchar(255)
+);
+
+insert into item_description(item_id,detail,material) values(1,"テストテストテスト","テストテストテスト");
+
+
+
+create table styles(
+style_id int,
+style_image varchar(255),
+style_detail varchar(255),
+);
+
+insert into styles(style_id,style_image,style_detail) values(1,".test,"テストテストテスト");
+
+
+
 create table users(
 user_id int primary key auto_increment,
 user_name varchar(255),

@@ -12,6 +12,12 @@
 			<result name="error">shoppingError.jsp</result>
 		</action>
 
+		<action name="ShoppingDetailAction" class="com.internousdev.webshop.action.ShoppingDetailAction"
+			method="execute">
+			<result name="success">shoppingDetail.jsp</result>
+			<result name="error">shoppingError.jsp</result>
+		</action>
+
 		<action name="StyleAction" class="com.internousdev.webshop.action.StyleAction"
 			method="execute">
 			<result name="success">style.jsp</result>
