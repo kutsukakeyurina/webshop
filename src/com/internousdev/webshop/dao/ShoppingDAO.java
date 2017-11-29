@@ -57,4 +57,50 @@ public class ShoppingDAO {
 		return itemDTOList;
 	}
 
+	public List<ItemDTO> selectByCategoryId(int categoryId) {
+		DBConnector db = new DBConnector();
+		Connection con = db.getConnection();
+
+		String sql= "select distinct i.item_id as item_id,"
+				   + "c.category_id as category_id,"
+				   + "c.category as category,"
+				   + "i.item_name as item_name,"
+				   + "i.item_image as item_image,"
+				   + "i.item_detail as item_detail,"
+				   + "i.price as price "
+				   + "from items as i,"
+				   + "categories as c "
+				   + "where c.category_id=i.category_id "
+				   + "and c.category_id=?";
+
+		try {
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, categoryId);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+
+				ItemDTO dto = new ItemDTO();
+				dto.setItemId(rs.getInt("item_id"));
+				dto.setCategoryId(rs.getInt("category_id"));
+				dto.setCategory(rs.getString("category"));
+				dto.setItemName(rs.getString("item_name"));
+				dto.setItemImage(rs.getString("item_image"));
+				dto.setItemDetail(rs.getString("item_detail"));
+				dto.setPrice(rs.getInt("price"));
+				itemDTOList.add(dto);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return itemDTOList;
+	}
+
 }

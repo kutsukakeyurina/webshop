@@ -217,6 +217,13 @@ font-size:15px;
 	height: 300px;
 }
 
+/*--shopping.jspのみ---*/
+td img{
+	width:150px;
+	height:150px;
+	border: 1px solid black;
+}
+
 #footer {
 	margin-bottom: 0 auto;
 	width: 100%;
@@ -227,3 +234,10 @@ font-size:15px;
 	bottom: 0;
 	text-align: center;
 }
+
+
+a:link { color: black; }
+a:visited { color: green; }
+a:hover { color: orange; }
+a:active { color: pink; }
+a{text-decoration:none;}

@@ -14,12 +14,17 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ShoppingAction extends ActionSupport implements SessionAware {
 	private List<ItemDTO> itemDTOList = new ArrayList<ItemDTO>();
 	private Map<String, Object> session;
+	private int categoryId;
 
 	public String execute() {
 		String ret = ERROR;
 		ShoppingDAO dao = new ShoppingDAO();
 
-		itemDTOList = dao.selectAll();
+		if(categoryId>0){
+			itemDTOList = dao.selectByCategoryId(categoryId);
+		}else{
+			itemDTOList = dao.selectAll();
+		}
 
 		if (itemDTOList.size() > 0) {
 			session.put("itemDTOList", itemDTOList);
@@ -30,6 +35,32 @@ public class ShoppingAction extends ActionSupport implements SessionAware {
 		}
 		return ret;
 	}
+
+
+
+	public List<ItemDTO> getItemDTOList() {
+		return itemDTOList;
+	}
+
+
+
+	public void setItemDTOList(List<ItemDTO> itemDTOList) {
+		this.itemDTOList = itemDTOList;
+	}
+
+
+
+	public int getCategoryId() {
+		return categoryId;
+	}
+
+
+
+	public void setCategoryId(int categoryId) {
+		this.categoryId = categoryId;
+	}
+
+
 
 	public Map<String, Object> getSession() {
 		return session;
