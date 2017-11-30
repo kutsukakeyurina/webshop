@@ -37,12 +37,14 @@
 	<div id="main">
 		<div class="leftside">
 			<br>
-			<table>
+			<s:iterator value="displayList">
+
+				<!--  <table>
 				<tbody>
 
-					<s:iterator value="#session.itemDTOList">
+				<s:iterator value="#session.itemDTOList">
 
-						<tr>
+					 <tr>
 
 							<td><a href='<s:url action="ShoppingDetailAction"><s:param name="itemId" value="%{itemId}" /></s:url>'><img src='<s:property value="itemImage"/>'/></a></td>
 							<td><a href='<s:url action="ShoppingDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>'><s:property value="itemDetail" /></a></td>
@@ -50,9 +52,68 @@
 						</tr>
 					</s:iterator>
 				</tbody>
-			</table>
+			</table>  -->
+
+
+
+				<s:property value="itemName" />
+				<s:property value="itemDetail" />
+				<s:property value="itemImage" />
+				<s:property value="price" />
+
+			</s:iterator>
+
+			<!-- リストにデータが入っている時-->
+			<s:if test="number > 0">
+
+				<div class="center" style="text-align: center;">
+					<!-- ページネーション:1ページ目のみ -->
+					<s:if test="pageNum == 1">
+						<span>&laquo;<s:text name="戻る" /></span>
+					</s:if>
+
+					<!-- ページネーション:1ページ目以外 -->
+					<s:else>
+						<a
+							href='<s:url action="AdminItemAction">
+							<s:param name="pageNum" value="pageNum-1"/>
+							</s:url>'>&laquo;<s:text
+								name="戻る" /></a>
+
+					</s:else>
+
+
+					<s:property value="pageNum" />
+
+
+					<!-- ページネーション:最終ページ -->
+					<s:if test="pageNum == maxPage">
+						<s:text name="進む" />&raquo;
+						</s:if>
+
+
+					<!-- 最終ページ以外 -->
+					<s:else>
+						<a
+							href='<s:url action="AdminItemAction">
+							<s:param name="pageNum" value="pageNum+1"/>
+							</s:url>'><s:text
+								name="進む" />&raquo;</a>
+
+					</s:else>
+
+
+				</div>
+			</s:if>
+
+
 		</div>
 	</div>
+
+
+
+
+
 
 	<!--サイドメニューここから-->
 	<div class="sub">

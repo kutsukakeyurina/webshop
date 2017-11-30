@@ -50,7 +50,7 @@
 				<ul>
 					<li><a href="#1">TOP</a></li>
 					<li><a href="StyleAction">Style</a></li>
-					<li><s:a href="ShoppingAction" >Shopping</s:a></li>
+					<li><s:a href="shopping.jsp" >Shopping</s:a></li>
 					<li><a href="ReserveAction">Reserve</a></li>
 				</ul>
 			</div>
@@ -113,7 +113,7 @@
 			<h4>ピックアップアイテム</h4>
 			<div class="pickup">
 				<ul class="leftpickup">
-					<li><a href="./image/pickup1.jpg"><img alt="" src="image/pickup1.jpg" /></a></li>
+					<li><a href=""><img alt="" src="image/pickup1.jpg" /></a></li>
 					<li><a href="shopping.jsp"><img alt="" src="image/pickup2.jpg" /></a></li>
 					<li><a href="shopping.jsp"><img alt="" src="image/pickup3.jpg" /></a></li>
 				</ul>
