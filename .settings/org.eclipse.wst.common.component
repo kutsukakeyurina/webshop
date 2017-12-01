@@ -2,7 +2,7 @@
     <wb-module deploy-name="webshop">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="webshop"/>
         <property name="java-output-path" value="/webshop/bin"/>
+        <property name="context-root" value="webshop"/>
     </wb-module>
 </project-modules>

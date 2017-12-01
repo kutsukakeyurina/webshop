@@ -12,6 +12,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 
 public class ShoppingAction extends ActionSupport implements SessionAware {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1674985479222824880L;
 	private List<ItemDTO> itemDTOList = new ArrayList<ItemDTO>();
 	private Map<String, Object> session;
 	private int categoryId;

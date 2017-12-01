@@ -11,6 +11,13 @@ import com.internousdev.webshop.dto.ItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ShoppingDetailAction extends ActionSupport implements SessionAware {
+	/**
+	 *
+	 */
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -7366791511155327910L;
 	private List<ItemDTO> itemDTOList = new ArrayList<ItemDTO>();
 	private Map<String, Object> session;
 	private int ItemId;

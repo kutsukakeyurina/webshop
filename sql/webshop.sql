@@ -98,10 +98,10 @@ insert into item_description(item_id,detail,material) values(1,"テストテス�
 create table styles(
 style_id int,
 style_image varchar(255),
-style_detail varchar(255),
+style_detail varchar(255)
 );
 
-insert into styles(style_id,style_image,style_detail) values(1,".test,"テストテストテスト");
+insert into styles(style_id,style_image,style_detail) values(1,"test","テストテストテスト");
 
 
 
