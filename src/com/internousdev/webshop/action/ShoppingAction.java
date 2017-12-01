@@ -26,6 +26,13 @@ public class ShoppingAction extends ActionSupport implements SessionAware {
 		String ret = ERROR;
 		ShoppingDAO dao = new ShoppingDAO();
 
+
+		if (categoryId > 0) {
+			itemDTOList= dao.selectByCategoryId(categoryId);
+		} else {
+			itemDTOList = dao.selectAll();
+		}
+
 		number = itemDTOList.size();
 		if (number > 0) {
 			// ページネーション処理
@@ -38,14 +45,10 @@ public class ShoppingAction extends ActionSupport implements SessionAware {
 			ret = SUCCESS;
 		}
 
-		if (categoryId > 0) {
-			displayList = dao.selectByCategoryId(categoryId);
-		} else {
-			displayList = dao.selectAll();
-		}
 
-		if (displayList.size() > 0) {
-			session.put("displayList", displayList);
+
+		if (itemDTOList.size() > 0) {
+			session.put("itemDTOList", itemDTOList);
 
 			ret = SUCCESS;
 		} else {

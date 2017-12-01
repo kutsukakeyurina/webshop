@@ -24,9 +24,9 @@
 			<div class="menu">
 				<ul>
 					<li><a href="home.jsp">TOP</a></li>
-					<li><a href="style.jsp">Style</a></li>
-					<li><s:a href="#1">Shopping</s:a></li>
-					<li><a href="reserve.jsp">Reserve</a></li>
+					<li><a href="StyleAction">Style</a></li>
+					<li><s:a href="ShoppingAction">Shopping</s:a></li>
+					<li><a href="ReserveAction">Reserve</a></li>
 				</ul>
 			</div>
 
@@ -37,9 +37,11 @@
 	<div id="main">
 		<div class="leftside">
 			<br>
-			<s:iterator value="displayList">
 
-				<!--  <table>
+			<table>
+				<s:iterator value="displayList">
+
+					<!--  <table>
 				<tbody>
 
 				<s:iterator value="#session.itemDTOList">
@@ -55,18 +57,23 @@
 			</table>  -->
 
 
-
-				<s:property value="itemName" />
-				<s:property value="itemDetail" />
-				<s:property value="itemImage" />
-				<s:property value="price" />
-
-			</s:iterator>
+					<tr>
+						<td><s:property value="itemName" /></td>
+						<td><a
+							href='<s:url action="ShoppingDetailAction"><s:param name="itemId" value="%{itemId}"/></s:url>'><s:property
+									value="itemDetail" /></a></td>
+						<td><a
+							href='<s:url action="ShoppingDetailAction"><s:param name="itemId" value="%{itemId}" /></s:url>'><img
+								class="shoppingimg" src='<s:property value="itemImage"/>' /></a></td>
+						<td><s:property value="price" /></td>
+					</tr>
+				</s:iterator>
+			</table>
 
 			<!-- リストにデータが入っている時-->
 			<s:if test="number > 0">
 
-				<div class="center" style="text-align: center;">
+				<div class="center" style="text-align: center; margin-bottom: 50px;">
 					<!-- ページネーション:1ページ目のみ -->
 					<s:if test="pageNum == 1">
 						<span>&laquo;<s:text name="戻る" /></span>
@@ -108,60 +115,60 @@
 
 
 		</div>
-	</div>
 
 
 
 
 
 
-	<!--サイドメニューここから-->
-	<div class="sub">
 
-		<h3>ブランドから探す</h3>
-		<div class="brand">
-			<ul>
-				<li><a href="http://www.admiralgolf.jp/"><img
-						src="image/sub1.gif"></a></li>
-				<li><a href="http://www.kappa.ne.jp/golf.html"><img
-						src="image/sub2.gif"></a></li>
-				<li><a href="https://www.callawaygolf.jp/"><img
-						src="image/sub3.gif"></a></li>
+		<!--サイドメニューここから-->
+		<div class="sub">
 
-			</ul>
+			<h3>ブランドから探す</h3>
+			<div class="brand">
+				<ul>
+					<li><a href="http://www.admiralgolf.jp/"><img
+							src="image/sub1.gif"></a></li>
+					<li><a href="http://www.kappa.ne.jp/golf.html"><img
+							src="image/sub2.gif"></a></li>
+					<li><a href="https://www.callawaygolf.jp/"><img
+							src="image/sub3.gif"></a></li>
+
+				</ul>
+			</div>
+
+			<h3>カテゴリから探す</h3>
+			<div class="category">
+				<ul class="cg">
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="1"/></s:url>">トップス</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="2"/></s:url>">スカート</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="3"/></s:url>">ワンピース</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="4"/></s:url>">レインウェア</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="5"/></s:url>">シューズ</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="6"/></s:url>">帽子</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="7"/></s:url>">グローブ</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="8"/></s:url>">ドライバー</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="9"/></s:url>">アイアン</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="10"/></s:url>">パター</a></li>
+					<li><a
+						href="<s:url action="ShoppingAction"><s:param name="categoryId" value="11"/></s:url>">小物</a></li>
+				</ul>
+			</div>
+
 		</div>
-
-		<h3>カテゴリから探す</h3>
-		<div class="category">
-			<ul class="cg">
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="1"/></s:url>">トップス</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="2"/></s:url>">スカート</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="3"/></s:url>">ワンピース</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="4"/></s:url>">レインウェア</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="5"/></s:url>">シューズ</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="6"/></s:url>">帽子</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="7"/></s:url>">グローブ</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="8"/></s:url>">ドライバー</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="9"/></s:url>">アイアン</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="10"/></s:url>">パター</a></li>
-				<li><a
-					href="<s:url action="ShoppingAction"><s:param name="categoryId" value="11"/></s:url>">小物</a></li>
-			</ul>
-		</div>
-
+		<!--サイドメニューここまで-->
 	</div>
-	<!--サイドメニューここまで-->
-
 	<!--フッターここから-->
 	<div id="footer">
 		<p>Copyright(C) golf shop All Rights Reserved.</p>

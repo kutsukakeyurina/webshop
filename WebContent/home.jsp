@@ -42,7 +42,7 @@
 				<ul>
 					<li><a href="#1">TOP</a></li>
 					<li><a href="StyleAction">Style</a></li>
-					<li><s:a href="shopping.jsp" >Shopping</s:a></li>
+					<li><s:a href="ShoppingAction" >Shopping</s:a></li>
 					<li><a href="ReserveAction">Reserve</a></li>
 				</ul>
 			</div>
