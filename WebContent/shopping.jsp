@@ -75,7 +75,7 @@
 					<!-- ページネーション:1ページ目以外 -->
 					<s:else>
 						<a
-							href='<s:url action="AdminItemAction">
+							href='<s:url action="ShoppingAction">
 							<s:param name="pageNum" value="pageNum-1"/>
 							</s:url>'>&laquo;<s:text
 								name="戻る" /></a>
@@ -95,7 +95,7 @@
 					<!-- 最終ページ以外 -->
 					<s:else>
 						<a
-							href='<s:url action="AdminItemAction">
+							href='<s:url action="ShoppingAction">
 							<s:param name="pageNum" value="pageNum+1"/>
 							</s:url>'><s:text
 								name="進む" />&raquo;</a>
